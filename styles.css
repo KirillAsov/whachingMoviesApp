@@ -76,8 +76,22 @@ body {
     gap: 3px;
     overflow-y: auto;
 }
+.list-films::-webkit-scrollbar {
+    background-color: #232323;
+    border: 1px solid  #3A3939;
+    border-radius: 10px;
+    
+}
+.list-films::-webkit-scrollbar-thumb {
+    background-color:rgba(101, 50, 248, 0.2);
+    border-radius: 10px;
+}
+.list-films::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
 .film-item {
     padding: 25px;
+    margin-right: 5px;
     font-size: 20px;
     line-height: 23px;
     background-color: #3A3939;
@@ -96,16 +110,16 @@ body {
     z-index: -1;
     opacity: 0;
 }
-.film-item__checkbox+label {
+.label {
     width: 80%;
     display: flex;
     align-items: center;
-    word-break:break-all;
+    word-break:keep-all;
 }
 .label::before {
     content: '';
-    display: inline-block;
-    width: 19px;
+    display: block;
+    min-width: 19px;
     height: 19px;
     border: 1px solid #F3F6F9;
     border-radius: 100px;
@@ -149,7 +163,7 @@ body {
 }
 .film-item__delete-film-span:hover {
     background-color: rgba(101, 50, 248);
-    opacity: 1;
+    opacity: 0.5;
 }
 .film-item__delete-film-span:hover::after {
     background-color: rgba(101, 50, 248);
