@@ -12,8 +12,8 @@ let films = [];
 
 //Получение названия фильма от пользователя
 const getFilmFormUser = () => {
-    let nameFilm = inputFilmNode.value;
-    return nameFilm;
+    let nameFilmFromUser = inputFilmNode.value;
+    return nameFilmFromUser;
 }
 
 //Очистка поля ввода
@@ -32,16 +32,16 @@ function isExitingValue (value) {
 
 // добавление в массив(список) фильма (от пользователя)
 const addFilm = () => {
-    const newFilm = getFilmFormUser();
-    films.unshift(newFilm);
+    const nameFilm = getFilmFormUser();
+    films.push(nameFilm);
 }
 
 // добавляем шаблонную запись для нового фильма
-const renderFilm = (newFilm) => {
+const renderFilm = (film) => {
     return (
     `<li class="film-item">
         <input class="film-item__checkbox" type="checkbox">
-        <label class="label">${newFilm}</label>
+        <label class="label">${film}</label>
         <div class="film-item__delete-film">
             <span class="film-item__delete-film-span"></span>
         </div>
