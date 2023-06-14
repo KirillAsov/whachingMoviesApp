@@ -15,18 +15,21 @@ const getFilmFormUser = () => {
     let nameFilm = inputFilmNode.value;
     return nameFilm;
 }
-function isExitingValue (value) {
-    if (!value) {
-        validationInfoNode.style.visibility = "visible"; 
-        return true;
-    }
-    validationInfoNode.style.visibility = "hidden";
-}
 
 //Очистка поля ввода
 const inputClearing = () => {
     inputFilmNode.value = '';
 }
+function isExitingValue (value) {
+    
+    if (!value.trim()) {
+        validationInfoNode.style.visibility = "visible"; 
+        inputClearing();
+        return true;
+    }
+    validationInfoNode.style.visibility = "hidden";
+}
+
 // добавление в массив(список) фильма (от пользователя)
 const addFilm = () => {
     const newFilm = getFilmFormUser();
